@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import * as yup from "yup";
 
-const Container = styled.div`
+export const Container = styled.div`
   background: #f3f4f7;
   padding: 60px;
   border-radius: 12px;
@@ -14,22 +14,22 @@ const Container = styled.div`
   margin-top: 40px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
 `;
 
-const StyledHeader = styled.h2`
+export const StyledHeader = styled.h2`
   margin-bottom: 12px;
   color: hotpink;
   font-size: 40px;
   margin-top: 0;
 `;
 
-const StyledForm = styled.form`
+export const StyledForm = styled.form`
   max-width: 500px;
   margin: 0 auto;
-  font-family: "Roboto Light";
 `;
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -40,18 +40,18 @@ const StyledInput = styled.input`
   font-size: 14px;
 `;
 
-const StyledLabel = styled.label`
+export const StyledLabel = styled.label`
   line-height: 2;
   text-align: left;
   display: block;
-  margin-bottom: 13px;
+  margin-bottom: 6px;
   margin-top: 20px;
   color: #0e101c;
   font-size: 18px;
   font-weight: bold;
 `;
 
-const StyledSubmit = styled.button`
+export const StyledSubmit = styled.button`
   background: #ec5990;
   color: white;
   text-transform: uppercase;
@@ -67,9 +67,23 @@ const StyledSubmit = styled.button`
   cursor: pointer;
 `;
 
-const ErrorText = styled.p`
+export const ErrorText = styled.p`
   color: #bf1650;
   font-size: 16px;
+`;
+
+export const ResultContainer = styled.div`
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  margin-top: 40px;
+  color: #9092a1;
+`;
+
+export const Result = styled.div`
+  background: white;
+  border-radius: 8px;
+  border: 1px solid lightgrey;
+  padding: 12px;
+  margin-top: 4px;
 `;
 
 const schema = yup
@@ -92,11 +106,8 @@ const SimpleForm = () => {
   const [formData, setFormData] = useState({});
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
     setFormData(data);
   };
-
-  console.log(errors);
 
   return (
     <Container>
@@ -124,7 +135,10 @@ const SimpleForm = () => {
 
         <StyledSubmit type="submit">Submit</StyledSubmit>
       </StyledForm>
-      <div>{JSON.stringify(formData)}</div>
+      <ResultContainer>
+        <label>Data sent</label>
+        <Result>{JSON.stringify(formData, null, 2)}</Result>
+      </ResultContainer>
     </Container>
   );
 };
