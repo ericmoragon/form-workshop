@@ -9,8 +9,8 @@ const Container = styled.div`
   background: #f3f4f7;
   padding: 60px;
   border-radius: 12px;
-  max-width: 500px;
-  margin: auto;
+  width: 500px;
+  height: fit-content;
   margin-top: 40px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -34,7 +34,7 @@ const StyledInput = styled.input`
   box-sizing: border-box;
   width: 100%;
   border-radius: 4px;
-  border: 1px solid #242424;
+  border: 1px solid #0e101c;
   padding: 10px 15px;
   margin-bottom: 10px;
   font-size: 14px;
@@ -46,7 +46,7 @@ const StyledLabel = styled.label`
   display: block;
   margin-bottom: 13px;
   margin-top: 20px;
-  color: #242424;
+  color: #0e101c;
   font-size: 18px;
   font-weight: bold;
 `;
