@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { SimpleForm } from "./components/SimpleForm";
+import { MultiStepForm } from "./components/MultiStepForm";
 
 const Background = styled.div`
   width: 100vw;
@@ -13,7 +14,7 @@ function App() {
   return (
     <Background className="App">
       <SimpleForm />
-      <SimpleForm />
+      <MultiStepForm />
     </Background>
   );
 }
